@@ -6,7 +6,7 @@ def main():
     net = S3D('s3d_dict.npy', 512)
 
     # Load the model weights
-    net.load_state_dict(th.load('s3d_howto100m.pth'))
+    # net.load_state_dict(th.load('s3d_howto100m.pth'))
 
     # Video input should be of size Batch x 3 x T x H x W and normalized to [0, 1]
     video = th.rand(2, 3, 32, 224, 224)
