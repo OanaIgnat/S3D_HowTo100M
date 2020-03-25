@@ -10,8 +10,12 @@ def main():
     # net.load_state_dict(th.load('s3d_howto100m.pth'))
 
     # Video input should be of size Batch x 3 x T x H x W and normalized to [0, 1]
-    # video = th.rand(2, 3, 32, 224, 224)
+    video1 = th.rand(2, 3, 32, 224, 224)
+    print(video1.shape)
+    print(type(video1))
     video = np.load("../video_feature_extractor/output/_0flfBHjVKU_features.npy")
+    print(video.shape)
+    print(type(video))
 
     # Evaluation mode
     net = net.eval()
