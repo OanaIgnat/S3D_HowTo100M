@@ -13,7 +13,7 @@ def main():
     video1 = th.rand(2, 3, 32, 224, 224)
     print(video1.shape)
     print(type(video1))
-    video = np.load("../video_feature_extractor/output/_0flfBHjVKU_features.npy")
+    video = th.from_numpy(np.load("../video_feature_extractor/output/_0flfBHjVKU_features.npy"))
     print(video.shape)
     print(type(video))
 
