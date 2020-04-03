@@ -25,10 +25,19 @@ def main():
     net = net.eval()
 
     # Video inference
+    '''
+    video_output is a dictionary containing two keys:
+
+        video_embedding: This is the video embedding (size 512) from the joint text-video space. 
+                        It should be used to compute similarity scores with text inputs using the text embedding.
+        
+        mixed_5c: This is the global averaged pooled feature from S3D of dimension 1024. 
+                This should be use for classification on downstream tasks.
+    '''
     video_output = net(video)
-    print(video_output)
-    print(video_output.shape)
-    print(type(video_output))
+    print(video_output['mixed_5c'])
+    print(video_output['mixed_5c'].shape)
+    print(type(video_output['mixed_5c']))
     #
     # # Text inference
     # text_output = net.text_module(['open door', 'cut tomato'])
